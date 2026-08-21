@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cost Manager - Settings</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-content">
+
+        <h1>Cost Manager</h1>
+
+        <nav>
+            <a href="index.html">Costs</a>
+            <a href="report.html">Reports</a>
+            <a href="charts.html">Charts</a>
+            <a href="settings.html" class="active">Settings</a>
+        </nav>
+
+    </div>
+</header>
+
+<main class="page-container">
+
+    <section class="page-section">
+        <h2>Exchange Rate Settings</h2>
+
+        <p>
+            Enter the URL of the server that provides the currency
+            exchange rates.
+        </p>
+
+        <form id="settingsForm">
+
+            <div class="form-group">
+                <label for="exchangeRatesUrl">
+                    Exchange Rates URL
+                </label>
+
+                <input
+                        type="url"
+                        id="exchangeRatesUrl"
+                        name="exchangeRatesUrl"
+                        placeholder="https://example.com/exchange-rates.json"
+                        required
+                >
+            </div>
+
+            <div class="button-group">
+                <button type="submit">
+                    Save
+                </button>
+
+                <button
+                        type="button"
+                        id="testUrlButton"
+                >
+                    Test URL
+                </button>
+
+                <button
+                        type="button"
+                        id="resetUrlButton"
+                >
+                    Reset to Default
+                </button>
+            </div>
+
+        </form>
+
+        <div
+                id="settingsMessage"
+                class="message"
+                aria-live="polite"
+        ></div>
+
+    </section>
+
+    <section class="page-section">
+
+        <h2>Supported Currencies</h2>
+
+        <ul>
+            <li>USD</li>
+            <li>ILS</li>
+            <li>GBP</li>
+            <li>EURO</li>
+        </ul>
+
+    </section>
+
+</main>
+
+<script
+        src="db.js"
+        data-skip-default-rates="true"
+></script>
+<script src="js/currency.js"></script>
+<script src="js/settings.js"></script>
+
+</body>
+</html>
