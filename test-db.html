@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>db.js Test</title>
+</head>
+<body>
+
+<h1>db.js Test</h1>
+
+<script src="db.js"></script>
+
+<script>
+    function test() {
+        try {
+            // Open the database.
+            const database = db.openCostsDB(
+                'costsdb',
+                1
+            );
+
+            // Add the first cost.
+            const firstCost = database.addCost({
+                sum: 200,
+                currency: 'USD',
+                category: 'FOOD',
+                description: 'pizza'
+            });
+
+            // Add the second cost.
+            const secondCost = database.addCost({
+                sum: 400,
+                currency: 'USD',
+                category: 'CAR',
+                description: 'fuel'
+            });
+
+            if (database) {
+                console.log(
+                    'creating db succeeded'
+                );
+            }
+
+            if (firstCost) {
+                console.log(
+                    'adding 1st cost item succeeded'
+                );
+            }
+
+            if (secondCost) {
+                console.log(
+                    'adding 2nd cost item succeeded'
+                );
+            }
+
+            // Get the report for the current month.
+            const report =
+                database.getReport('USD');
+
+            console.log('Report:');
+            console.log(report);
+
+            console.log('Total:');
+            console.log(report.total.sum);
+        } catch (exception) {
+            console.log(exception.message);
+        }
+    }
+
+    test();
+</script>
+
+</body>
+</html>
