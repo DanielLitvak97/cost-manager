@@ -1,0 +1,18 @@
+# WebStorm / IntelliJ IDEA
+.idea/
+*.iml
+
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.tmp
+*.temp
+*.log
