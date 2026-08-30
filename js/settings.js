@@ -96,8 +96,7 @@ async function testCurrentUrl() {
     }
 }
 
-// Resets the URL to the default server
-// and refreshes the cached rates.
+// Resets the URL to the default server and refreshes the cached rates.
 async function resetSettings() {
     resetExchangeRatesUrl();
 
